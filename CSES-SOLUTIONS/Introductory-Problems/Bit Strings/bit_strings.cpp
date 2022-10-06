@@ -8,7 +8,7 @@ int main() {
     cin >> n;
     for (int i = 0; i < n; i++) {
         ans *= 2;
-        // taking mod here so that integer overflow doesn't take place 
+        // taking mod here so that integer overflow don't take place 
         ans %= MOD;
     }
     cout << ans;
