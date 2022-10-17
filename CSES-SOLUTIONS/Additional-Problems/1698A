@@ -1,0 +1,87 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fast                      \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);                   \
+    cout.tie(0);
+#define all(x) x.begin(), x.end()
+#define fo(i, a, n, p) for (int i = a; (p < 0 && i > n) || (p > 0 && i < n); i += p)
+#define pb push_back
+#define ub upper_bound
+#define lb lower_bound
+#define ff first
+#define ss second
+#define int long long
+#define dbg(x) cout << #x << " == " << x << "\n";
+#define pb push_back
+#define mp make_pair
+#define pii pair<int, int>
+#define vi vector<int>
+#define mii map<int, int>
+#define pqb priority_queue<int>
+#define pqs priority_queue<int, vi, greater<int>>
+#define setbits(x) __builtin_popcountll(x)
+#define zrobits(x) __builtin_ctzll(x)
+#define mod 1000000007
+#define inf 1e18
+#define ps(x, y) fixed << setprecision(y) << x
+#define mk(arr, n, type) type *arr = new type[n];
+#define w(x)  \
+    int x;    \
+    cin >> x; \
+    while (x--)
+typedef long long ll;
+typedef long double ld;
+
+bool isPal(string s, int n)
+{
+    for (int i = 0; i < n / 2; i++)
+    {
+        if (s[i] != s[n - 1 - i])
+            return false;
+    }
+    return true;
+}
+
+void shivam()
+{
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    
+    int arr[n];
+    
+    for(int i = 0; i<n; i++) {
+        cin >> v[i]; 
+        if(i>0)
+        arr[i] = v[i]^arr[i-1];
+        else arr[0] = v[i];
+    }169
+    for(int i = 0; i<n; i++){
+            int a = 0;
+            for(int j = i+1; j<n; j++){
+                a ^= v[j];
+            }
+            if(i>0){
+                if(arr[i-1]^a == v[i]) {cout << v[i] << "\n"; return;}
+            }else{
+                if(a==v[i]){cout << v[i] << "\n"; return;}
+            }
+
+
+    }
+
+
+     
+}
+
+int32_t main()
+{
+    fast;
+    int t;
+    cin >> t;
+    while (t--)
+        shivam();
+    return 0;
+}
